@@ -13,7 +13,6 @@ const SHA256 = require('crypto-js/sha256');
 const hex2ascii = require('hex2ascii');
 
 class Block {
-
     // Constructor - argument data will be the object containing the transaction data
 	constructor(data){
 		this.hash = null;                                           // Hash of the block
@@ -37,15 +36,15 @@ class Block {
      */
     validate() {
         let self = this;
-        return new Promise((resolve, reject) => {
+        return new Promise(async(resolve, reject) => {
             // Save in auxiliary variable the current block hash
-                                            
+            const mHash = self.hash;                            
             // Recalculate the hash of the Block
+            self.hash = await SHA256(JSON.stringify({ ...self, hash: null })).toString();
             // Comparing if the hashes changed
             // Returning the Block is not valid
-            
             // Returning the Block is valid
-
+            resolve(mHash === self.hash);
         });
     }
 
@@ -59,14 +58,19 @@ class Block {
      *     or Reject with an error.
      */
     getBData() {
-        // Getting the encoded data saved in the Block
-        // Decoding the data to retrieve the JSON representation of the object
-        // Parse the data to an object to be retrieve.
-
-        // Resolve with the data if the object isn't the Genesis block
-
+        let self = this;
+        
+        return new Promise((resolve, reject) => {
+            // Getting the encoded data saved in the Block
+            const hexadecimalEncodedData = self.body;
+            // Decoding the data to retrieve the JSON representation of the object
+            const decodedData = hex2ascii(hexadecimalEncodedData);
+            // Parse the data to an object to be retrieve.
+            const data = JSON.parse(decodedData);
+            // Resolve with the data if the object isn't the Genesis block
+            self.height > 0 ? resolve(data) : reject(new Error("Genesis Block!"));
+        });
     }
-
 }
 
 module.exports.Block = Block;                    // Exposing the Block class as a module
