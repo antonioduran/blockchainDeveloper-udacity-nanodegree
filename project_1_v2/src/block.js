@@ -40,11 +40,11 @@ class Block {
             // Save in auxiliary variable the current block hash
             const mHash = self.hash;                            
             // Recalculate the hash of the Block
-            self.hash = await SHA256(JSON.stringify({ ...self, hash: null })).toString();
+            const recalculateHash = await SHA256(JSON.stringify({...self, hash: null})).toString();
             // Comparing if the hashes changed
             // Returning the Block is not valid
             // Returning the Block is valid
-            resolve(mHash === self.hash);
+            resolve(mHash === recalculateHash);
         });
     }
 
