@@ -73,8 +73,8 @@ class Blockchain {
             blockValid ? resolve(block) : reject(new Error('This is an invalid block...'));
         })
         .catch(err => console.log("Error: ", err))
-        .then (block => {   
-            if (this.validateChain()) {
+        .then (async block => { 
+            if (await self.validateChain()) {
                 this.chain.push(block);
                 this.height = this.chain.length -1;
                 return block;
@@ -219,7 +219,7 @@ class Blockchain {
                     errorLog.push(new Error(`Invalid block number: ${block.height} : hash : ${block.hash}`))
                 }
             }
-            errorLog.length > 0 ? resolve(errorLog) : resolve(true);
+            resolve(errorLog)
         });
     }
 }
