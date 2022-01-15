@@ -74,9 +74,13 @@ class Blockchain {
         })
         .catch(err => console.log("Error: ", err))
         .then (block => {   
-            this.chain.push(block);
-            this.height = this.chain.length -1;
-            return block;
+            if (this.validateChain()) {
+                this.chain.push(block);
+                this.height = this.chain.length -1;
+                return block;
+            } else {
+                return "Chain is not valid.";
+            }
         });
     }
 
@@ -116,10 +120,10 @@ class Blockchain {
         let self = this;
         return new Promise(async (resolve, reject) => {
             let mTimeFromMessage = parseInt(message.split(':')[1]);
-            let currentTime = parseInt(new Date().getTime().toString().slice(0, -3));
+            let currentTime = parseInt(new Date().getTime().toString().slice(0, -3)); //Remove last 3 digits to remove milliseconds from time, and get just seconds
             let timeElapsed = currentTime - mTimeFromMessage;
-
-            if (timeElapsed < 300000) {
+            //300 seconds = 5 minutes
+            if (timeElapsed < 300) {
                 const messageValid = bitcoinMessage.verify(message, address, signature);
                 
                 if (messageValid) {
@@ -146,7 +150,7 @@ class Blockchain {
         let self = this;
         
         return new Promise((resolve, reject) => {
-            resolve(self.chain.filter(block => block.hash === hash)[0]);
+            resolve(self.chain.find(block => block.hash === hash));
         });
     }
 
@@ -215,10 +219,9 @@ class Blockchain {
                     errorLog.push(new Error(`Invalid block number: ${block.height} : hash : ${block.hash}`))
                 }
             }
-            errorLog.length > 0 ? resolve(errorLog) : resolve('No errors detected.');
+            errorLog.length > 0 ? resolve(errorLog) : resolve(true);
         });
     }
-
 }
 
 module.exports.Blockchain = Blockchain;   
