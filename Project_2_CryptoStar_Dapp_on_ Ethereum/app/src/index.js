@@ -2,12 +2,11 @@ import Web3 from "web3";
 import starNotaryArtifact from "../../build/contracts/StarNotary.json";
 
 const App = {
-  web3: null,
-  account: null,
-  meta: null,
-
-  start: async function() {
-    const { web3 } = this;
+  web3 : null,
+  account : null,
+  meta : null,
+  start : async function() {
+    const {web3} = this;
 
     try {
       // get contract instance
@@ -25,25 +24,24 @@ const App = {
       console.error("Could not connect to contract or chain.");
     }
   },
-
-  setStatus: function(message) {
+  setStatus : function(message) {
     const status = document.getElementById("status");
     status.innerHTML = message;
   },
-
-  createStar: async function() {
-    const { createStar } = this.meta.methods;
+  createStar : async function() {
+    const {createStar} = this.meta.methods;
     const name = document.getElementById("starName").value;
     const id = document.getElementById("starId").value;
     await createStar(name, id).send({from: this.account});
     App.setStatus("New Star Owner is " + this.account + ".");
   },
-
   // Implement Task 4 Modify the front end of the DAPP
-  lookUp: async function (){
-    
+  lookUp : async function () {
+    const {lookUptokenIdToStarInfo} = this.meta.methods;
+    let id = document.getElementById("lookid").value;
+    let name = await lookUptokenIdToStarInfo(id).call();
+    App.setStatus(`Star name is: ${name}`);
   }
-
 };
 
 window.App = App;
