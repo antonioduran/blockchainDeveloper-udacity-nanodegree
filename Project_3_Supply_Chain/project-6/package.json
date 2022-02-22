@@ -1,0 +1,20 @@
+{
+  "name": "supplychaine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Antonio Duran - ing dot antonio dot duran @gmail dot com",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "truffle-assertions": "^0.9.2",
+    "web3": "^1.7.0"
+  }
+}
