@@ -201,7 +201,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
       //Update the appropriate fields
       items[_upc].itemState = State.Packed;
       //Emit the appropriate event
-      emit Packed(upc);(upc);
+      emit Packed(_upc);
     }
 
   // Define a function 'sellItem' that allows a farmer to mark an item 'ForSale'
@@ -215,7 +215,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
       items[_upc].itemState = State.ForSale;
       items[_upc].productPrice = _price;
       // Emit the appropriate event
-      emit ForSale(upc);(upc);
+      emit ForSale(_upc);
     }
 
   // Define a function 'buyItem' that allows the disributor to mark an item 'Sold'
@@ -240,7 +240,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
     payable(items[_upc].originFarmerID).transfer(items[_upc].productPrice);
     
     //emit the appropriate event
-    emit Sold(upc);(upc);
+    emit Sold(_upc);
   }
 
   // Define a function 'shipItem' that allows the distributor to mark an item 'Shipped'
@@ -272,7 +272,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
       items[_upc].itemState = State.Received;
   
       //Emit the appropriate event
-      emit Received(upc);
+      emit Received(_upc);
     }
 
   // Define a function 'purchaseItem' that allows the consumer to mark an item 'Purchased'
