@@ -118,3 +118,11 @@ Antonio Duran & Udacity
 * web3 ^1.7.0
 * @truffle/hdwallet-provider ^2.0.3
 * truffle-assertions ^0.9.2
+
+## Deploy to Ropsten Network
+![truffle test](images/ropstenEtherscan.png)
+![truffle test](images/frontWithRopstenAccount.png)
+[a link] (https://github.com/antonioduran/blockchainDeveloper-udacity-nanodegree/tree/main/Project_3_Supply_Chain/project-6/log_deploy_ropsten.txt)
+
+## Ropsten Etherscan
+https://ropsten.etherscan.io/address/0x84404a01db0922c9582deB902B9D25b5445f051D
