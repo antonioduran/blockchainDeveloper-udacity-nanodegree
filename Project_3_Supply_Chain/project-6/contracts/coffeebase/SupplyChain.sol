@@ -282,7 +282,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
     received(_upc)
     
     //Access Control List enforced by calling Smart Contract / DApp
-    onlyConsumer() {
+    onlyConsumer {
       //Update the appropriate fields - ownerID, consumerID, itemState
       items[_upc].ownerID = msg.sender;
       items[_upc].consumerID = msg.sender;
