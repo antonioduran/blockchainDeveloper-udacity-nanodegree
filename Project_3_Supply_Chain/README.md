@@ -1,4 +1,3 @@
-@@ -0,0 +1,112 @@
 # Supply chain & data auditing
 
 This repository containts an Ethereum DApp that demonstrates a Supply Chain flow between a Seller and Buyer. The user story is similar to any commonly used supply chain process. A Seller can add items to the inventory system stored in the blockchain. A Buyer can purchase such items from the inventory system. Additionally a Seller can mark an item as Shipped, and similarly a Buyer can mark an item as Received.
@@ -122,7 +121,7 @@ Antonio Duran & Udacity
 ## Deploy to Ropsten Network
 ![truffle test](images/ropstenEtherscan.png)
 ![truffle test](images/frontWithRopstenAccount.png)
-[a link] (https://github.com/antonioduran/blockchainDeveloper-udacity-nanodegree/tree/main/Project_3_Supply_Chain/project-6/log_deploy_ropsten.txt)
 
-## Ropsten Etherscan
+## Log & Ropsten Etherscan
 https://ropsten.etherscan.io/address/0x84404a01db0922c9582deB902B9D25b5445f051D
+https://github.com/antonioduran/blockchainDeveloper-udacity-nanodegree/tree/main/Project_3_Supply_Chain/project-6/log_deploy_ropsten.txt
