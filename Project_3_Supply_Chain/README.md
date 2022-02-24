@@ -112,4 +112,9 @@ Antonio Duran & Udacity
 * Ganache CLI v6.12.2 (ganache-core: 2.13.2)
 * Truffle v5.4.29
 * Node v14.17.0
+
+## Dependencies
+
 * web3 ^1.7.0
+* @truffle/hdwallet-provider ^2.0.3
+* truffle-assertions ^0.9.2
