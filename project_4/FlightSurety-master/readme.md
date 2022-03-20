@@ -14,24 +14,35 @@ To install, download or clone the repo, then:
 Compile project
 
 `truffle compile`
+![truffle compile](images/truffleCompile.png)
 
 To run truffle tests:
 
 `truffle develop`
+![truffle develop](images/truffleDevelop.png)
 
 After that execute:
 
 `test`
+![truffle test](images/test.png)
+
+![truffle test](images/test2.png)
 
 Run ganache cli:
 
 `ganache-cli -m 'upon lemon will boss era delay awkwardrt female puppy kiss tide' --port 8545 --chainId 1234 --e 1000000`
 
+![truffle ganache](images/ganache.png)
+
+
 To use the dapp:
 
 `truffle migrate`
+![truffle ganache](images/truffleMigrate.png)
+![truffle ganache](images/truffleMigrate2.png)
 
 `npm run dapp`
+![npm run dapp](images/npmrundapp.png)
 
 To view dapp:
 
