@@ -8,7 +8,6 @@ To install, download or clone the repo, then:
 
 `npm install`
 
-
 ## Develop Client
 
 Compile project
@@ -33,6 +32,9 @@ Run ganache cli:
 `ganache-cli -m 'upon lemon will boss era delay awkwardrt female puppy kiss tide' --port 8545 --chainId 1234 --e 1000000`
 
 ![truffle ganache](images/ganache.png)
+
+It will be needed to have a local private configured with the port 8545 from metamask, and the chain ID 1234, and import couple accounts from ganache cli.
+![metamask](images/localprivate8545.png)
 
 
 To use the dapp:
