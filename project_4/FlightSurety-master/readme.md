@@ -47,6 +47,7 @@ To use the dapp:
 To view dapp:
 
 `http://localhost:8000`
+![localhost](images/localhost.png)
 
 ## Develop Server
 
