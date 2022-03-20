@@ -60,11 +60,6 @@ Clone this repository and install all requisite npm packages (as listed in ```pa
 npm install
 ```
 
-Run ganache cli in other terminal
-```
-ganache-cli -m 'upon lemon will boss era delay awkwardrt female puppy kiss tide' --port 85 --chainId 1234 --e 1000000
-```
-
 Launch Truffle development environment:
 
 ```
