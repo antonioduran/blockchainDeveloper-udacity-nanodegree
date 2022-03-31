@@ -549,7 +549,7 @@ contract CustomERC721Token is ERC721Metadata {
     
     function mint(address to, uint256 tokenId) public onlyOwner returns (bool) {
         super._mint(to, tokenId);
-        setTokenURI(tokenId);
+        super.setTokenURI(tokenId);
         return true;
     }
 }
