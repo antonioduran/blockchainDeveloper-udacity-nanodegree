@@ -1071,6 +1071,7 @@ SolnSquareVerifier
   ```
 ## OpenSea MarketPlace Storefront link's
 https://testnets.opensea.io/collection/realestatetokenfadr
+
 https://testnets.opensea.io/antonioduran
 
 
