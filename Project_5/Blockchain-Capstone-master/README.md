@@ -97,6 +97,20 @@ Compiling your contracts...
 
 
 ## Deploying to rinkeby test network
+Before executing the following script, on the section of
+`migrations` folder, then open `2_deploy_contract.js`
+
+```
+  for (tokenId = 1; tokenId <= 10; tokenId++) {
+    await SolnSquareVerifierContract.mint(
+      Proof.proof,
+      Proof.inputs,
+      tokenId,
+      "0xc6f93BEaf84B43D9D97975c9be22C220FB81f438"
+    );
+  }
+  ```
+
 
 `truffle migrate --network rinkeby --reset`
 
