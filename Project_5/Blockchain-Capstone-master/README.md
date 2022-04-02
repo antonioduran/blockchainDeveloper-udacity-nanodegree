@@ -257,6 +257,9 @@ SolnSquareVerifier
 contract address:    0x2aCe15EEA9659c2b407d7F7E3df1e18C52Bf20fa
 ```
 
+Etherscan rinkeby
+https://rinkeby.etherscan.io/address/0x2aCe15EEA9659c2b407d7F7E3df1e18C52Bf20fa
+
 ## Contract Abi's
 SolnSquareVerifier
 ```
@@ -966,8 +969,92 @@ SolnSquareVerifier
     }
   ]
   ```
-## OpenSea MarketPlace Storefront link's
 
+  Verifier
+  ```
+   "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Pairing.G1Point",
+              "name": "a",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256[2]",
+                  "name": "X",
+                  "type": "uint256[2]"
+                },
+                {
+                  "internalType": "uint256[2]",
+                  "name": "Y",
+                  "type": "uint256[2]"
+                }
+              ],
+              "internalType": "struct Pairing.G2Point",
+              "name": "b",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Pairing.G1Point",
+              "name": "c",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Verifier.Proof",
+          "name": "proof",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256[2]",
+          "name": "input",
+          "type": "uint256[2]"
+        }
+      ],
+      "name": "verifyTx",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "r",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    }
+  ]
+  ```
+## OpenSea MarketPlace Storefront link's
+https://testnets.opensea.io/antonioduran
 
 
 # Project Resources
