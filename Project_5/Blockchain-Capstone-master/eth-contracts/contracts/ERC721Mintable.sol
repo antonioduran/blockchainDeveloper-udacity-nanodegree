@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
-import 'openzeppelin-solidity/contracts/utils/Address.sol';
-import 'openzeppelin-solidity/contracts/utils/Counters.sol';
-import 'openzeppelin-solidity/contracts/utils/math/SafeMath.sol';
-import 'openzeppelin-solidity/contracts/token/ERC721/IERC721Receiver.sol';
-import "openzeppelin-solidity/contracts/utils/Strings.sol";
+import '@openzeppelin/contracts/utils/Address.sol';
+import '@openzeppelin/contracts/utils/Counters.sol';
+import '@openzeppelin/contracts/utils/math/SafeMath.sol';
+import '@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol';
+import "@openzeppelin/contracts/utils/Strings.sol";
 import "./Concat.sol";
 
 contract Ownable {
@@ -496,24 +496,24 @@ contract ERC721Metadata is ERC721Enumerable {
      *     bytes4(keccak256('tokenURI(uint256)'))
      */
 
-    constructor (string memory name, string memory symbol, string memory baseTokenURI)  {
+    constructor (string memory name_, string memory symbol_, string memory baseTokenURI_)  {
         //DONE TODO: set instance var values
-        _name = name;
-        _symbol = symbol;
-        _baseTokenURI = baseTokenURI;
+        _name = name_;
+        _symbol = symbol_;
+        _baseTokenURI = baseTokenURI_;
         _registerInterface(_INTERFACE_ID_ERC721_METADATA);
     }
 
     // DONE TODO: create external getter functions for name, symbol, and baseTokenURI
-    function getName() external view returns (string memory) {
+    function name() external view returns (string memory) {
         return _name;
     }
 
-    function getSymbol() external view returns (string memory) {
+    function symbol() external view returns (string memory) {
         return _symbol;
     }
 
-    function getBaseTokenURI() external view returns (string memory) {
+    function baseTokenURI() external view returns (string memory) {
         return _baseTokenURI;
     }
 
