@@ -97,7 +97,7 @@ Compiling your contracts...
 
 
 ## Deploying to rinkeby test network
-Before executing the following script, on the section of
+Before executing the following script, please try to go to the section of
 `migrations` folder, then open `2_deploy_contract.js`
 
 ```
@@ -110,6 +110,8 @@ Before executing the following script, on the section of
     );
   }
   ```
+
+  The part above is minting 10 tokens, so one of the important parts here it is to modify the address which it is going to be used to create the smart contract. 
 
 
 `truffle migrate --network rinkeby --reset`
